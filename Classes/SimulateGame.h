@@ -2,7 +2,7 @@
 #define _Simulate_Game_h
 #include "Tile.h"
 #include "common.h"
-#define DEFAULT_NUM 1500
+#define DEFAULT_NUM 3000
 struct GameData{
 	int score = 0;
 	int tiles[4][4];
@@ -23,6 +23,7 @@ public:
 	void setSimulateTimes(int n) { num = n; }
 	int getBestDirection();
 private:
+	void randVal(GameData &data);
 	bool canMove(GameData &d, EMoveTo mt);
 	void move(GameData &data ,EMoveTo mt);
 	int simMoveOnce(EMoveTo to);
